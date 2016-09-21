@@ -2,6 +2,7 @@ package org.iii.tw.mylistv2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -24,22 +25,25 @@ public class List1Activity extends AppCompatActivity {
     }
 
     private class MyAdapter extends BaseAdapter{
+        private LayoutInflater inflater;
+
         public MyAdapter() {
+            inflater = LayoutInflater.from(List1Activity.this);
         }
 
         @Override
         public int getCount() {
-            return 0;
+            return dataset.length;
         }
 
         @Override
         public Object getItem(int position) {
-            return null;
+            return dataset[position];
         }
 
         @Override
         public long getItemId(int position) {
-            return 0;
+            return position;
         }
 
         @Override
