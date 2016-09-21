@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(it);
     }
     public void list2(View v){
-        Intent it = new Intent(this, List1Activity.class);
+        Intent it = new Intent(this, List2Activity.class);
         startActivity(it);
     }
 }
