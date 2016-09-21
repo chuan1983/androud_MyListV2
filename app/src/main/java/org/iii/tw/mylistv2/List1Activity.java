@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class List1Activity extends AppCompatActivity {
     private ListView list1;
@@ -48,7 +49,12 @@ public class List1Activity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+            if(convertView == null){
+                convertView = inflater.inflate(R.layout.layout_itemv1,parent,false);
+            }
+            TextView title = (TextView) convertView.findViewById(R.id.itemv1_title);
+            title.setText(dataset[position]);
+            return convertView;
         }
     }
 }
