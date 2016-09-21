@@ -1,5 +1,6 @@
 package org.iii.tw.mylistv2;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -54,6 +55,15 @@ public class List1Activity extends AppCompatActivity {
             }
             TextView title = (TextView) convertView.findViewById(R.id.itemv1_title);
             title.setText(dataset[position]);
+
+            if (position%2 == 0){
+                convertView.setBackgroundColor(Color.YELLOW);
+                title.setTextColor(Color.CYAN);
+            }else {
+                convertView.setBackgroundColor(Color.BLUE);
+                title.setTextColor(Color.GRAY);
+            }
+
             return convertView;
         }
     }
